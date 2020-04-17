@@ -25,8 +25,8 @@ mongoose.connect( uri, { useNewUrlParser: true, useCreateIndex: true, useUnified
 // })
 
 
-const countsRouter = require('./routes/counts');
-const usersRouter = require('./routes/users');
+const countsRouter = require('./backend/routes/counts');
+const usersRouter = require('./backend/routes/users');
 
 app.use('/users', usersRouter);
 app.use('/counts', countsRouter);
