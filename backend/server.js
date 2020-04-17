@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose'); //helps us to connect to our mongodb database
-
+const path = require('path');
 require('dotenv').config(); //dotenv file
 
 const app=express();
@@ -15,7 +15,7 @@ const uri = "mongodb+srv://danape:countdownsystem@cluster0-gvajm.mongodb.net/tes
 // await mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true });
 
 // const uri = process.env.LOCAL_URI; //where our db is stored 
-mongoose.connect( uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+mongoose.connect( process.env.MONGODB_URI || uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
      .then(() => console.log( 'Database Connected' ))
      .catch(err => console.log( err ));
                       
@@ -24,14 +24,20 @@ mongoose.connect( uri, { useNewUrlParser: true, useCreateIndex: true, useUnified
 //     console.log("MongoBD database connection established successfully" );
 // })
 
-
 const countsRouter = require('./routes/counts');
 const usersRouter = require('./routes/users');
 
 app.use('/users', usersRouter);
 app.use('/counts', countsRouter);
-
-
+ 
+if(process.env.NODE_ENV == "production")
+{
+    app.use(express.static("./../build"))
+    app.get('*',(reg,res)=>
+    {
+        res.sendFile(path.join(__dirname,"./../","build","index.html"))
+    })
+}
 app.listen(port ,()=> {
     console.log('Server is running on port:',  {port} ); //start the server
 });
