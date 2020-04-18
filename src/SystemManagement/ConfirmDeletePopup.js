@@ -11,7 +11,7 @@ constructor(props) {
     super(props);
 } 
 _delete_chosen_table(id){
-    axios.delete('https://countdownsystem.herokuapp.comcounts/'+id)
+    axios.delete('https://localhost:5000counts/'+id)
     .then(response => { console.log(response.data)});
     this.setState({ 
       //db : this.state.DB_info.filter(el => el._id !== id),
