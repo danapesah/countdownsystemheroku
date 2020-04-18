@@ -32,6 +32,7 @@ app.use('/counts', countsRouter);
  
 if(process.env.NODE_ENV == "production")
 {
+    console.log("IN");
     app.use(express.static("./../build"))
     app.get('*',(reg,res)=>
     {
