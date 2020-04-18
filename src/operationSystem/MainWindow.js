@@ -34,7 +34,7 @@ class MainWindow extends React.Component {
       <div  style={{backgroundColor:'#ffe0b3',width:"20px"}} class="col"><MessageWindow /></div>
       </div>
       <div class="row">
-      <div style={{backgroundColor:'#00b33c'}} class="col-sm-8"><TestScheduler /></div>
+      <div  class="col-sm-8"><TestScheduler /></div>
       <div style={{backgroundColor:'#d1d1e0'}} class="col-sm-4"><MainStatusWindow /></div>
       </div>
        {/* {curr_location=== "/display" ? null  :
