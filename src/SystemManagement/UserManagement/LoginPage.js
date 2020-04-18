@@ -28,13 +28,12 @@ import MyNavbar from './MyNavbar'
   }
 }
 componentDidMount() {
-  axios.get('https://countdownsystem.herokuapp.com/users/') //GET REQUEST
+  axios.get('http://localhost:5000/users/') //GET REQUEST
     .then(response => {
     if (response.data.length===0)return;
     this.setState({ DB_users_info :response.data })
     //console.log(this.state.DB_users_info)
   })
-
   .catch((error) => { //catch errors 
     console.log(error);
   })

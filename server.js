@@ -30,15 +30,15 @@ const usersRouter = require('./backend/routes/users');
 app.use('/users', usersRouter);
 app.use('/counts', countsRouter);
  
-if(process.env.NODE_ENV == "production")
-{
+// if(process.env.NODE_ENV == "production")
+// {
     console.log("IN");
     app.use(express.static("build"))
     app.get('*',(reg,res)=>
     {
         res.sendFile(path.join(__dirname,"","build/","index.html"))
     })
-}
+// }
 app.listen(port ,()=> {
     console.log('Server is running on port:',  {port} ); //start the server
 });
