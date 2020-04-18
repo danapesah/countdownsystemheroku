@@ -36,7 +36,7 @@ if(process.env.NODE_ENV == "production")
     app.use(express.static("./../build"))
     app.get('*',(reg,res)=>
     {
-        res.sendFile(path.join(__dirname,"./../","build","index.html"))
+        res.sendFile("index.html",path.join(__dirname,"./../build"))
     })
 }
 app.listen(port ,()=> {
