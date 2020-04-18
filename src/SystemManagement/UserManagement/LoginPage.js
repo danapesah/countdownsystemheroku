@@ -30,9 +30,11 @@ import MyNavbar from './MyNavbar'
 componentDidMount() {
   axios.get('https://countdownsystem.herokuapp.com//users/') //GET REQUEST
     .then(response => {
+      console.log("response")
+      console.log(response.data)
     if (response.data.length===0)return;
     this.setState({ DB_users_info :response.data })
-    //console.log(this.state.DB_users_info)
+    console.log(response.data)
   })
   .catch((error) => { //catch errors 
     console.log(error);
