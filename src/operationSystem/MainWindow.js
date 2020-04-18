@@ -19,17 +19,30 @@ class MainWindow extends React.Component {
 
   //console.log(window.location.pathname)
   return (
+    
     <div >
        {curr_location=== "/display" ? null  :
         curr_location==="/system"   ?  
-
-        // <Link style={{ backgroundColor: '#ffce99'}} onClick={()=>this.props.dispatch(save_new_table_state(-1) )}  to ="/list" >שמור טבלה חדשה </Link>:
-        // <Link style={{ backgroundColor: '#ffce99'}} onClick={()=>this.props.dispatch(save_new_table_state(curr_location.slice(6)) ) } to ="/list" >שמור טבלה ערוכה</Link>
-
         <button  onClick={()=>this.props.dispatch(save_new_table_state(-1) )} >שמור טבלה חדשה  </button>:
         <button  onClick={()=>this.props.dispatch(save_new_table_state(curr_location.slice(6)) ) } >שמור טבלה ערוכה </button>
   } 
-    <Container style={{position:"auto",right:"0%" ,top:"10%",width:"95%"}} >
+      <div class="row">
+      <div style={{backgroundColor:'#66c2ff'}} class="col-sm-8"><MainOperationWindow /></div>
+      <div style={{backgroundColor:'#ffce99'}} class="col-sm-4"><MainComponentTime /></div>
+      </div>
+      <div class="row">
+      <div  style={{backgroundColor:'#ffe0b3',width:"20px"}} class="col"><MessageWindow /></div>
+      </div>
+      <div class="row">
+      <div style={{backgroundColor:'#00b33c'}} class="col-sm-8"><TestScheduler /></div>
+      <div style={{backgroundColor:'#d1d1e0'}} class="col-sm-4"><MainStatusWindow /></div>
+      </div>
+       {/* {curr_location=== "/display" ? null  :
+        curr_location==="/system"   ?  
+        <button  onClick={()=>this.props.dispatch(save_new_table_state(-1) )} >שמור טבלה חדשה  </button>:
+        <button  onClick={()=>this.props.dispatch(save_new_table_state(curr_location.slice(6)) ) } >שמור טבלה ערוכה </button>
+  }  */}
+    {/* <Container style={{position:"auto",right:"0%" ,top:"10%",width:"95%"}} >
       <Row  >
         <Col style={{backgroundColor:'#66c2ff'}} ><MainOperationWindow /></Col>
         <Col style={{backgroundColor:'#ffce99'}} ><MainComponentTime /></Col>
@@ -37,12 +50,12 @@ class MainWindow extends React.Component {
       <Row>
         <Col  style={{backgroundColor:'#ffe0b3'}} ><MessageWindow /></Col>
       </Row>
-      <Row>
-      <Col style={{backgroundColor:'#00b33c'}} ><TestScheduler/></Col>
+      <Row style={{height:"auto",width:"auto"}} >
+      <Col style={{backgroundColor:'#00b33c',width:"auto"}} ><TestScheduler/></Col>
       <Col style={{backgroundColor:'#d1d1e0'}} ><MainStatusWindow/></Col>
       </Row>
 
-    </Container> 
+    </Container>  */}
    
     {/* <div style={{position:"fixed",top:"10%",right:"38%",width:"60%",backgroundColor:'#66c2ff',height:"30%"}}><MainOperationWindow /></div>
     <div style={{position:"fixed",top:"10%",right:"20%", width:"17%",backgroundColor: '#ffce99',height:"30%"}}><MainComponentTime /></div>
