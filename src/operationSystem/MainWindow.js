@@ -31,10 +31,11 @@ const layout = [
   ];
   return (
     <div>
-    <MainStatusWindow/>
-    <MainComponentTime/>
-    <MessageWindow/>
-    <TestScheduler/>
+    <div style={{position:"fixed",top:"10%",right:"38%",width:"60%",backgroundColor:'#66c2ff',height:"30%"}}><MainOperationWindow /></div>
+    <div style={{position:"fixed",top:"10%",right:"20%", width:"17%",backgroundColor: '#ffce99',height:"30%"}}><MainComponentTime /></div>
+    <div style={{position:"fixed",top:"55%",backgroundColor:"#00b33c"  }}><TestScheduler /></div>
+    <div style={{position:"fixed",top:"40%",backgroundColor:'#ffe0b3',width:"78%" ,height:"12%",right:"20%" }}><MessageWindow /></div>
+    <div style={{position:"fixed",top:"55%",right:"20%", width:"25%",backgroundColor: '#d1d1e0',height:"40%"}}><MainStatusWindow /></div>
     {curr_location=== "/display" ? null  :
         curr_location==="/system"   ?  
 
