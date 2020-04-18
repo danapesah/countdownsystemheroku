@@ -24,8 +24,8 @@ mongoose.connect( process.env.MONGODB_URI || uri, { useNewUrlParser: true, useCr
 //     console.log("MongoBD database connection established successfully" );
 // })
 
-const countsRouter = require('./backend/routes/counts');
-const usersRouter = require('./backend/routes/users');
+const countsRouter = require('./routes/counts');
+const usersRouter = require('./routes/users');
 
 app.use('/users', usersRouter);
 app.use('/counts', countsRouter);
