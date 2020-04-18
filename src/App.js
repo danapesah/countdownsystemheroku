@@ -6,7 +6,7 @@ import MainWindow from './operationSystem/MainWindow'
 function App() {
   return (
     <div>
-      <MainWindow />
+      <Routes />
     </div>
   );
 }
