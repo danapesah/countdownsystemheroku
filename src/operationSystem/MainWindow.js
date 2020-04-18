@@ -30,19 +30,12 @@ const layout = [
     {i: 'f', x: 0, y: 3, w: 4, h: 3},
   ];
   return (
-    <GridLayout className="layout" layout={layout} cols={12} rowHeight={100} width={5000}    >
-      {/* <div   style={{ backgroundColor: 'blue', overflow: "scroll"}}  key="a">a</div> */}
-      <div key="b" style={styles.cardsContainer}>
-        <MainOperationWindow/>
-      </div>
-      <div   style={ {backgroundColor: '#d1d1e0', overflow:"auto"}} key="c">
-        <MainStatusWindow/>
-      </div>
-      <div   style={{ backgroundColor: '#ffce99'}} key="d"><MainComponentTime/></div>
-      <div   style={{ backgroundColor: '#ffe0b3', overflow:"hidden"}} key="e"><MessageWindow/></div>
-      <div   style={{ backgroundColor: '#00b33c',  overflow: "auto"}} key="f"><TestScheduler/></div>
-      <div   key="g">
-      {curr_location=== "/display" ? null  :
+    <div>
+    <MainStatusWindow/>
+    <MainComponentTime/>
+    <MessageWindow/>
+    <TestScheduler/>
+    {curr_location=== "/display" ? null  :
         curr_location==="/system"   ?  
 
         // <Link style={{ backgroundColor: '#ffce99'}} onClick={()=>this.props.dispatch(save_new_table_state(-1) )}  to ="/list" >שמור טבלה חדשה </Link>:
@@ -50,8 +43,31 @@ const layout = [
 
         <button  onClick={()=>this.props.dispatch(save_new_table_state(-1) )} >שמור טבלה חדשה  </button>:
         <button  onClick={()=>this.props.dispatch(save_new_table_state(curr_location.slice(6)) ) } >שמור טבלה ערוכה </button>
-      }</div>   
-    </GridLayout>
+  }
+    </div>
+
+    // <GridLayout className="layout" layout={layout} cols={12} rowHeight={100} width={5000}    >
+    //   {/* <div   style={{ backgroundColor: 'blue', overflow: "scroll"}}  key="a">a</div> */}
+    //   <div key="b" style={styles.cardsContainer}>
+    //     <MainOperationWindow/>
+    //   </div>
+    //   <div   style={ {backgroundColor: '#d1d1e0', overflow:"auto"}} key="c">
+    //     <MainStatusWindow/>
+    //   </div>
+    //   <div   style={{ backgroundColor: '#ffce99'}} key="d"><MainComponentTime/></div>
+    //   <div   style={{ backgroundColor: '#ffe0b3', overflow:"hidden"}} key="e"><MessageWindow/></div>
+    //   <div   style={{ backgroundColor: '#00b33c',  overflow: "auto"}} key="f"><TestScheduler/></div>
+    //   <div   key="g">
+    //   {curr_location=== "/display" ? null  :
+    //     curr_location==="/system"   ?  
+
+    //     // <Link style={{ backgroundColor: '#ffce99'}} onClick={()=>this.props.dispatch(save_new_table_state(-1) )}  to ="/list" >שמור טבלה חדשה </Link>:
+    //     // <Link style={{ backgroundColor: '#ffce99'}} onClick={()=>this.props.dispatch(save_new_table_state(curr_location.slice(6)) ) } to ="/list" >שמור טבלה ערוכה</Link>
+
+    //     <button  onClick={()=>this.props.dispatch(save_new_table_state(-1) )} >שמור טבלה חדשה  </button>:
+    //     <button  onClick={()=>this.props.dispatch(save_new_table_state(curr_location.slice(6)) ) } >שמור טבלה ערוכה </button>
+    //   }</div>   
+    // </GridLayout>
 )
   
 }
