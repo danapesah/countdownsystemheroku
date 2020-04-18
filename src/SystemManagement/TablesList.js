@@ -16,7 +16,7 @@ class TablesList extends Component {
         };
       }
    componentDidMount() {
-    axios.get('http://https://countdownsystem.herokuapp.com/counts/') //GET REQUEST
+    axios.get('https://https://countdownsystem.herokuapp.com/counts/') //GET REQUEST
       .then(response => {
       if (response.data.length===0)return;
       this.setState({ DB_info :response.data, data_length:response.data.length })
