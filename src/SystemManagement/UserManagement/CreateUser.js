@@ -48,9 +48,9 @@ onSubmit(e) {
 
   console.log(user);
 
-  //send the use data to the backend, send HTTP POST REQUEST to this 'http://localhost:5000/users/add', backend endpoint 
+  //send the use data to the backend, send HTTP POST REQUEST to this 'https://countdownsystem.herokuapp.com//users/add', backend endpoint 
   //that expects a jason object in the request body and we send it as a second arguement
-  axios.post('http://localhost:5000/users/add', user)
+  axios.post('https://countdownsystem.herokuapp.com//users/add', user)
   .then(res => console.log(res.data)); //promise, after its posted well console our the res.data
   alert("user: "+ this.state.username + " added!")
   this.setState({
