@@ -30,8 +30,6 @@ class LoginPage extends Component {
   componentDidMount() {
     axios.get('https://countdownsystem.herokuapp.com/users/') //GET REQUEST
       .then(response => {
-        console.log("response - client")
-        console.log("response.data")
         if (response.data.length === 0) return;
         this.setState({ DB_users_info: response.data })
       })
