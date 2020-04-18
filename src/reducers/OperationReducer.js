@@ -143,7 +143,8 @@ const OperationReducer = (state = initialState, action) =>{
         if (action.payload.id === -1 )
         {
             console.log("count: SAVE_STATE " , count);
-            axios.post('https://countdownsystem.herokuapp.com//counts/add', count)
+            axios.post('http://localhost:5000/counts/add', count)
+            //axios.post('https://countdownsystem.herokuapp.com/counts/add', count)
             .then(res => console.log(res.data  ),  );//promise, after its posted well console our the res.data
 
            
@@ -154,7 +155,8 @@ const OperationReducer = (state = initialState, action) =>{
          
             console.log("count edit: SAVE_STATE " , count);
           // console.log(  action.payload.id) 
-            axios.post('https://countdownsystem.herokuapp.com/counts/edit/' + 
+          axios.post('http://localhost:5000/counts/edit/'+
+            //axios.post('https://countdownsystem.herokuapp.com/counts/edit/' + 
             action.payload.id, count)
             .then(res => console.log(res.data));
             
